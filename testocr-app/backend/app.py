@@ -15,9 +15,6 @@ def upload_pdf():
 
     file = request.files['file']
     print("file object",file)
-    #pdf_bytes = file.read()
-    #temp_pdf_path = f"temp_{uuid.uuid4()}.pdf"
-    #file.save(temp_pdf_path)
     
     #images = convert_from_bytes(pdf_bytes)
     result_text = ""
@@ -37,11 +34,11 @@ def ocr():
 
     file = request.files['image']
 
-    poppler_path = r'D:/poppler/poppler-24.08.0/Library/bin'  # Change this to your actual path
+    #poppler_path = r'D:/poppler/poppler-24.08.0/Library/bin'  # Change this to your actual path
     pdf_bytes = file.read()
 
     # Convert PDF pages to images (list of PIL Images)
-    images = convert_from_bytes(pdf_bytes, poppler_path=poppler_path)
+    images = convert_from_bytes(pdf_bytes)
 
     # Save each page as a separate image
     for i, image in enumerate(images):
@@ -63,13 +60,13 @@ def newocr():
 
     file = request.files['file']
     filename = file.filename.lower()
-    poppler_path = r'D:/poppler/poppler-24.08.0/Library/bin'  # Change this to your actual path
+    #poppler_path = r'D:/poppler/poppler-24.08.0/Library/bin'  # Change this to your actual path
 
     texts = []
 
     try:
         if filename.endswith('.pdf'):
-            images = convert_from_bytes(file.read(), poppler_path=poppler_path)
+            images = convert_from_bytes(file.read())
             for img in images:
                 img_np = np.array(img)
                 result = reader.readtext(img_np)
