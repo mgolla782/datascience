@@ -58,9 +58,9 @@ Update ~/.streamlit/config.toml to allow external access:
 mkdir -p ~/.streamlit
 
 cat <<EOF > ~/.streamlit/config.toml  
-[server]
-headless = true
-enableCORS = false
-port = 8501
-address = "0.0.0.0"
-EOF
+[server]  
+headless = true  
+enableCORS = false  
+port = 8501  
+address = "0.0.0.0"  
+EOF  
