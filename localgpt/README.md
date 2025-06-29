@@ -23,6 +23,7 @@ Click Create.
 
 # Step 2: Install Ollama and LLM Models
 --install ollama
+
 curl -fsSL https://ollama.com/install.sh | sh
 
 --pull nomic-embed-text
@@ -34,6 +35,7 @@ ollama pull llama3.2:3
 # Step 3: Install Python and venv
 # Update and install pip/virtualenv
 sudo apt update && sudo apt install python3-pip -y
+
 pip3 install virtualenv
 
 # Clone or upload your app (e.g., via Git or SCP)
@@ -42,6 +44,7 @@ cd your-streamlit-repo
 
 # Create and activate virtual environment
 virtualenv venv
+
 source venv/bin/activate
 
 # Install requirements
