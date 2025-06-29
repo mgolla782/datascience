@@ -52,10 +52,11 @@ source venv/bin/activate
 # Install requirements
 pip install -r requirements.txt
 
-#Step 4: Run Streamlit App
-Update ~/.streamlit/config.toml to allow external access:
+# Step 4: Run Streamlit App
 
-mkdir -p ~/.streamlit
+# Update ~/.streamlit/config.toml to allow external access:  
+
+mkdir -p ~/.streamlit  
 
 cat <<EOF > ~/.streamlit/config.toml  
 [server]  
@@ -64,3 +65,8 @@ enableCORS = false
 port = 8501  
 address = "0.0.0.0"  
 EOF  
+
+# Run the app
+streamlit run app.py
+
+
