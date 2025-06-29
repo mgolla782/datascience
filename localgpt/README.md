@@ -27,10 +27,12 @@ Click Create.
 curl -fsSL https://ollama.com/install.sh | sh
 
 --pull nomic-embed-text
+
 ollama pull nomic-embed-text
 
 --pull llama model
-ollama pull llama3.2:3
+
+ollama pull llama3.2:3b
 
 # Step 3: Install Python and venv
 # Update and install pip/virtualenv
@@ -55,7 +57,7 @@ Update ~/.streamlit/config.toml to allow external access:
 
 mkdir -p ~/.streamlit
 
-cat <<EOF > ~/.streamlit/config.toml
+cat <<EOF > ~/.streamlit/config.toml  
 [server]
 headless = true
 enableCORS = false
