@@ -36,7 +36,7 @@ ollama pull llama3.2:3
 # Update and install pip/virtualenv
 sudo apt update && sudo apt install python3-pip -y
 
-pip3 install virtualenv
+sudo apt install python3-virtualenv
 
 # Clone or upload your app (e.g., via Git or SCP)
 git clone https://github.com/your-username/your-streamlit-repo.git
@@ -49,3 +49,16 @@ source venv/bin/activate
 
 # Install requirements
 pip install -r requirements.txt
+
+#Step 4: Run Streamlit App
+Update ~/.streamlit/config.toml to allow external access:
+
+mkdir -p ~/.streamlit
+
+cat <<EOF > ~/.streamlit/config.toml
+[server]
+headless = true
+enableCORS = false
+port = 8501
+address = "0.0.0.0"
+EOF
